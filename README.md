@@ -43,7 +43,7 @@ git clone https://github.com/ABC-iRobotics/PlatypOUs-Mobile-Robot-Platform.git
 In the cloned or downloaded repository directory, build the workspace by running:
 ```
 cd PlatypOUs-Mobile-Robot-Platform
-./platypous_sim build
+./platypous build
 ```
 This will initialize the web app with `npm ci` if not initialized, and build the ROS workspace with `catkin build`.
 
@@ -51,30 +51,21 @@ You should also run this every time you make a change in one of the ROS packages
 
 #### 3. Start the simulation
 ```
-./platypous_sim start
+./platypous start_sim
 ```
 This should start the simulation with the default configuration, and also the server for the web GUI, which you can open in a browser by typing in: `localhost:3000`
 
 ## Real robot
-On the robot, the environment is built into a docker image by the command:
-```
-./platypous_robot build
-```
-
 The image can be started in a docker container in the current terminal:
 ```
-./platypous_robot start_once
+./platypous start_robot
 ```
 
 Or the docker container can be started in the background (and will restart automatically, even after computer restarts):
 ```
-./platypous_robot start
+./platypous start_robot
 ```
 
-This can be stopped by removing the container:
-```
-./platypous_robot stop
-```
 
 ## Using the robot
 For information on the ROS packages, nodes and topics, see the [PlatypOUs ROS workspace](ros/src/README.md).
